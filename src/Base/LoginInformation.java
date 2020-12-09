@@ -4,14 +4,13 @@ import java.io.File;
 import java.util.Scanner;
 
 public class LoginInformation {
-    String username = "";
-    String password = "";
+
     String filepath = "src\\Base\\members.txt";
 
     public void isAdmin(String username, String password) {
         boolean found = false;
-        String tempUsername = "";
-        String tempPassword = "";
+        String tempUsername ;
+        String tempPassword ;
 
         try {
             Scanner x = new Scanner(new File(filepath));

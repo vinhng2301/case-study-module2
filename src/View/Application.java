@@ -1,4 +1,6 @@
-package Base;
+package View;
+
+import Base.LoginInformation;
 
 import java.util.Scanner;
 
@@ -8,22 +10,32 @@ public class Application {
         Scanner sc = new Scanner(System.in);
         LoginInformation login = new LoginInformation();
 
-        int cases = 0;
+        int loginCases;
+        int past = 1;
         do {
-            System.out.println("Login to continue!");
-            System.out.println("1: Login ");
-            System.out.println("2: Exit ");
-            cases = Integer.parseInt(sc.nextLine());
-            switch (cases) {
-                case 1: {
-                    System.out.println("Username : ");
-                    String user = sc.nextLine();
-                    System.out.println("Password :");
-                    String pass = sc.nextLine();
-                    login.isAdmin(user, pass);
-                    break;
-                }
+            System.out.println("------Login to continue!-------");
+            System.out.println("1: LOGIN");
+            System.out.println("2: EXIT");
+            loginCases = Integer.parseInt(sc.nextLine());
+            if (loginCases == 1) {
+                System.out.println("Username : ");
+                String user = sc.nextLine();
+                System.out.println("Password :");
+                String pass = sc.nextLine();
+                login.isAdmin(user, pass);
+
+                past = 2;
             }
-        } while(cases !=2);
+        } while(loginCases !=2 && past == 1);
+
+
+        System.out.println("----------Menu---------");
+        System.out.println("1: ADD EMPLOYEE");
+        System.out.println("2: DELETE EMPLOYEE");
+        System.out.println("3: EDIT EMPLOYEES VIA ID");
+        System.out.println("4: VIEW EMPLOYEES LIST");
+        System.out.println("0: EXIT !!");
+
+
     }
 }
