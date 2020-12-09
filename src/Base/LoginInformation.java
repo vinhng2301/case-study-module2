@@ -4,13 +4,13 @@ import java.io.File;
 import java.util.Scanner;
 
 public class LoginInformation {
-        String username = "";
-        String password = "";
-        String filepath = "src\\com\\codegym\\members.txt";
+    String username = "";
+    String password = "";
+    String filepath = "src\\Base\\members.txt";
 
     public void isAdmin(String username, String password) {
         boolean found = false;
-        String tempUsername = ""; 
+        String tempUsername = "";
         String tempPassword = "";
 
         try {
@@ -24,8 +24,6 @@ public class LoginInformation {
                 if (tempUsername.trim().equals(username.trim()) && tempPassword.trim().equals(password.trim())){
                     found = true;
                 }
-
-
             }
             x.close();
             System.out.println(found);

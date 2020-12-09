@@ -24,6 +24,6 @@ public class Application {
                     break;
                 }
             }
-    } while(cases !=2);
-}
+        } while(cases !=2);
+    }
 }
