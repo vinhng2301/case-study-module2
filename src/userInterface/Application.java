@@ -71,6 +71,7 @@ public class Application {
 
     private static int readInt(int min, int max) {
         int choice;
+        Scanner sc = new Scanner(System.in);
         while (true) {
             try {
                 choice = Integer.parseInt(sc.nextLine());
