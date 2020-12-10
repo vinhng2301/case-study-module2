@@ -35,15 +35,16 @@ public class Application {
                 past = 2;
             }
         } while(loginCases !=2 && past == 1);
+        menu();
     }
-    
 
-    private int menu(){
+
+    private static int menu(){
         System.out.println("----------Menu---------");
         System.out.println("1: ADD EMPLOYEE");
-        System.out.println("2: DELETE EMPLOYEE");
+        System.out.println("2: VIEW EMPLOYEES LIST");
         System.out.println("3: EDIT EMPLOYEES VIA ID");
-        System.out.println("4: VIEW EMPLOYEES LIST");
+        System.out.println("4: DELETE EMPLOYEE");
         System.out.println("0: EXIT !!");
         int choice = readInt(0, 3);
         return choice;

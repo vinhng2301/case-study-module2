@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class LoginInformation {
     String filepath = "src\\login\\members.txt";
+
+
     public void isAdmin(String username, String password) {
         boolean found = false;
         String tempUsername ;
