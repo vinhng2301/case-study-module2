@@ -49,7 +49,7 @@ public class Application {
         return choice;
     }
 
-    private void start (){
+    public void start (){
         while (true){
             int choice = menu();
             switch (choice) {
@@ -59,6 +59,10 @@ public class Application {
                 case 1:
                     addEmployees();
                     break;
+                case 2:
+                    showAll();
+                default:
+                    throw new AssertionError();
             }
 
         }
@@ -102,5 +106,15 @@ public class Application {
         System.out.println("Enter Employees Salary: ");
         float salary = readFloat(0, Float.MAX_VALUE);
         Employees e = new Employees(id, name, salary);
+        this.em.addEmployee(e);
+    }
+
+    private void showAll() {
+        System.out.println("-------Employees List-------");
+        System.out.println("ID | NAME | SALARY");
+        for (int i = 0; i < this.em.count(); i++) {
+            Employees e = this.em.getEmployees(i);
+            System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSalary());
+        }
     }
 }
